@@ -9,8 +9,10 @@
     <Grid>
         <Button x:Name="AddButton" Content="Tilføj" HorizontalAlignment="Left" Margin="231,95,0,0" VerticalAlignment="Top" Click="AddButton_Click"/>
         <Button x:Name="RemoveButton" Content="Fjern" HorizontalAlignment="Left" Margin="453,90,0,0" VerticalAlignment="Top" Click="RemoveButton_Click"/>
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="291,197,0,0" TextWrapping="Wrap" Text="Timer" VerticalAlignment="Top" Width="143"/>
-        <Button x:Name="SubmitTimeButton" Content="Button" HorizontalAlignment="Left" Margin="443,202,0,0" VerticalAlignment="Top" Click="SubmitTimeButton_Click"/>
+        <TextBox x:Name="TimerBox" HorizontalAlignment="Left" Height="30" Margin="291,197,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="143"/>
+        <Button x:Name="SubmitTimeButton" Content="Enter" HorizontalAlignment="Left" Margin="443,202,0,0" VerticalAlignment="Top" Click="SubmitTimeButton_Click"/>
+        <Label Content="Tid i minutter" HorizontalAlignment="Left" Margin="291,166,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="SuccessMessage" Content="Interval er nu opdateret." HorizontalAlignment="Left" Margin="307,280,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

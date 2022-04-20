@@ -27,6 +27,7 @@ namespace SkrivebordOpgave
         {
             ProgramManager = new ProgramManager();
             InitializeComponent();
+            SuccessMessage.Visibility = Visibility.Hidden;
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
@@ -35,7 +36,7 @@ namespace SkrivebordOpgave
             openFileDialog.ShowDialog();
             string selectedFile = openFileDialog.FileName;
 
-            if (selectedFile != null) 
+            if (selectedFile != null)
             {
                 ProgramManager.MoveNewImageToFolder(selectedFile);
             }
@@ -44,7 +45,7 @@ namespace SkrivebordOpgave
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog =new OpenFileDialog();
+            OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = Environment.CurrentDirectory + "\\backgrounds";
             openFileDialog.ShowDialog();
             string selectedFileToRemove = openFileDialog.FileName;
@@ -53,7 +54,11 @@ namespace SkrivebordOpgave
 
         private void SubmitTimeButton_Click(object sender, RoutedEventArgs e)
         {
+            int interval = int.Parse(TimerBox.Text);
 
+            ProgramManager.SetTimerInterval(interval);
+
+            SuccessMessage.Visibility = Visibility.Visible;
         }
     }
 }

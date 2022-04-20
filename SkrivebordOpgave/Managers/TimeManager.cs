@@ -9,9 +9,9 @@ namespace SkrivebordOpgave.Managers
 {
     public class TimeManager
     {
-        public Timer? Timer = new Timer();
+        public Timer Timer = new Timer();
 
-        public void SetTimer(int minutes)
+        public Timer SetTimer(int minutes)
         {
             if (minutes > 0)
             {
@@ -19,20 +19,11 @@ namespace SkrivebordOpgave.Managers
 
                 Timer = new Timer();
                 Timer.Interval = ms;
-                Timer.Elapsed += T_Elapsed;
                 Timer.AutoReset = true;
 
-                Timer.Start();
-
+                return Timer;
             }
-
+            return null;
         }
-
-     
-        public void T_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
-        {
-
-        }
-
     }
 }
